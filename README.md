@@ -1,4 +1,5 @@
 # font2img
+![Downlods Count](https://github.com/kofj/font2png/releases/download/v1.0.0/font2png-macos.tar.gz)
 
 A tool for converting TTF icon font to images.
 
