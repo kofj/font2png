@@ -6,8 +6,16 @@ A tool for converting TTF icon font to images.
 ## Install
 
 ### MacOS
+
+Via homebrew.
 ```bash
-brew tap kofj
+brew tap kofj/kofj
+brew install font2png
+```
+
+Via Cargo
+```
+cargo install font2png
 ```
 
 ## Help
