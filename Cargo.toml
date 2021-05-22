@@ -3,6 +3,11 @@ name = "font2png"
 version = "0.1.0"
 authors = ["疯魔慕薇 <kfanjian@gmail.com>"]
 edition = "2018"
+description = "A tool for converting TTF icon font to images."
+license = "MIT"
+homepage = "https://blog.kfanjian.com/font2png"
+documentation = "https://blog.kfanjian.com/font2png"
+repository = "https://github.com/kofj/font2png"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
