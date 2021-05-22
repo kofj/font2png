@@ -41,10 +41,17 @@ struct Options {
     #[structopt(
         short = "s",
         long = "size",
-        default_value = "120",
+        default_value = "78",
         help = "output image's height and width(pixel)"
     )]
     size: u16,
+    #[structopt(
+        short = "S",
+        long = "iconsize",
+        default_value = "54",
+        help = "icon's height and width(pixel)"
+    )]
+    iconsize: f32,
 }
 fn main() {
     let options = Options::from_args();
@@ -53,7 +60,6 @@ fn main() {
     let output_path = Path::new(&options.output);
 
     let mut image = RgbaImage::new(options.size as u32, options.size as u32);
-    // let mut image = RgbaImage::new(200, 200);
 
     let fontbytes = Vec::from(include_bytes!("icon.ttf") as &[u8]);
     let size = fontbytes.len();
@@ -61,9 +67,11 @@ fn main() {
     println!("font file size: {}, count={}", size, font.glyph_count());
 
     let scale = Scale {
-        x: options.size as f32,
-        y: options.size as f32,
+        x: options.iconsize,
+        y: options.iconsize,
     };
+
+    let offset: u32 = ((options.size - options.iconsize as u16) / 2) as u32;
 
     let color = Rgb::from_hex_str(&options.color).unwrap();
 
@@ -83,8 +91,8 @@ fn main() {
             255u8,
             // 0u8,
         ]),
-        0,
-        0,
+        offset,
+        offset,
         scale,
         &font,
         &options.charter,

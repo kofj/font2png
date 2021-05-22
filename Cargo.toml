@@ -1,6 +1,6 @@
 [package]
 name = "font2png"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["疯魔慕薇 <kfanjian@gmail.com>"]
 edition = "2018"
 description = "A tool for converting TTF icon font to images."
